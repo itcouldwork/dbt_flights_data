@@ -13,7 +13,7 @@ daily_data AS (
             (json_data->>'tmin')::FLOAT AS min_temp_c,
             (json_data->>'tmax')::FLOAT AS max_temp_c,
             (json_data->>'prcp')::FLOAT AS precipitation_mm,
-            (json_data->>'snow')::INTEGER AS max_snow_mm,
+            ((json_data->>'snow')::FLOAT)::INTEGER AS max_snow_mm,
             ((json_data->>'wdir')::FLOAT)::INTEGER AS avg_wind_direction,
             (json_data->>'wspd')::FLOAT AS avg_wind_speed_kmh,
             (json_data->>'wpgt')::FLOAT AS wind_peakgust_kmh,
