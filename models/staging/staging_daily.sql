@@ -8,7 +8,7 @@ WITH daily_raw AS (
 daily_data AS (
     SELECT  airport_code,
             station_id,
-            json_data->>'date'::DATE AS date,
+            (json_data->>'date')::DATE AS date,
             (json_data->>'tavg')::FLOAT AS tavg,
             (json_data->>'tmin')::FLOAT AS tmin,
             (json_data->>'tmax')::FLOAT AS tmax,
