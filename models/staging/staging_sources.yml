@@ -1,7 +1,7 @@
 version: 2
 sources:
 - name: staging
-  schema: public
+  schema: dbt_test
   tables:
     - name: weather_daily_raw
     - name: weather_hourly_raw
