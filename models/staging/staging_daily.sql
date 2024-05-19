@@ -8,17 +8,17 @@ WITH daily_raw AS (
 daily_data AS (
     SELECT  airport_code,
             station_id,
-            json_data->>'date' AS date,
-            (json_data->>'tavg')::float AS tavg,
-            (json_data->>'tmin')::float AS tmin,
-            (json_data->>'tmax')::float AS tmax,
-            (json_data->>'prcp')::float AS prcp,
-            (json_data->>'snow')::float AS snow,
-            (json_data->>'wdir')::float AS wdir,
-            (json_data->>'wspd')::float AS wspd,
-            (json_data->>'wpgt')::float AS wpgt,
-            (json_data->>'pres')::float AS pres,
-            (json_data->>'tsun')::float AS tsun
+            json_data->>'date'::DATE AS date,
+            (json_data->>'tavg')::FLOAT AS tavg,
+            (json_data->>'tmin')::FLOAT AS tmin,
+            (json_data->>'tmax')::FLOAT AS tmax,
+            (json_data->>'prcp')::FLOAT AS prcp,
+            (json_data->>'snow')::FLOAT AS snow,
+            (json_data->>'wdir')::FLOAT AS wdir,
+            (json_data->>'wspd')::FLOAT AS wspd,
+            (json_data->>'wpgt')::FLOAT AS wpgt,
+            (json_data->>'pres')::FLOAT AS pres,
+            (json_data->>'tsun')::FLOAT AS tsun
     FROM daily_raw
 )
 SELECT * 
