@@ -10,17 +10,17 @@ hourly_data AS (
             airport_code
             ,station_id
             ,(json_data->>'time')::TIMESTAMP AS timestamp	
-            ,(json_data->>'temp')::FLOAT AS temp
-            ,(json_data->>'dwpt')::FLOAT AS dwpt
-            ,(json_data->>'rhum')::INTEGER AS rhum
-            ,(json_data->>'prcp')::FLOAT AS prcp
-            ,(json_data->>'snow')::INTEGER AS snow
-            ,(json_data->>'wdir') AS wdir
-            ,(json_data->>'wspd')::FLOAT AS wspd
-            ,(json_data->>'wpgt')::FLOAT AS wpgt
-            ,(json_data->>'pres')::FLOAT AS pres
-            ,(json_data->>'tsun')::INTEGER AS tsun
-            ,(json_data->>'coco')::INTEGER AS coco
+            ,(json_data->>'temp')::FLOAT AS temp_c
+            ,(json_data->>'dwpt')::FLOAT AS dewpoint_c
+            ,(json_data->>'rhum')::FLOAT AS humidity_perc
+            ,(json_data->>'prcp')::FLOAT AS precipitation_mm
+            ,(json_data->>'snow')::INTEGER AS snow_mm
+            ,((json_data->>'wdir')::FLOAT)::INTEGER AS wind_direction
+            ,(json_data->>'wspd')::FLOAT AS wind_speed_kmh
+            ,(json_data->>'wpgt')::FLOAT AS wind_peakgust_kmh
+            ,(json_data->>'pres')::FLOAT AS pressure_hpa 
+            ,(json_data->>'tsun')::INTEGER AS sunshine_min
+            ,(json_data->>'coco')::INTEGER AS condition_code
     FROM hourly_raw
 )
 SELECT * 
