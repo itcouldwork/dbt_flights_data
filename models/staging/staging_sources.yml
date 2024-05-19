@@ -1,0 +1,7 @@
+version: 2
+sources:
+- name: staging
+  schema: public
+  tables:
+    - name: weather_daily_raw
+    - name: weather_hourly_raw
