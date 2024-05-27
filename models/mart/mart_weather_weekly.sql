@@ -13,7 +13,7 @@ weekly_aggregation AS (
             ,AVG(avg_wind_speed_kmh)::NUMERIC(5,2) AS avg_wind_speed_kmh
             ,MAX(wind_peakgust_kmh)::NUMERIC(5,2) AS wind_peakgust_kmh
             ,AVG(avg_pressure_hpa)::NUMERIC(6,2) AS avg_pressure_hpa
-            ,SUM(sunshine_min) AS sun_minutes
+            ,SUM(sun_minutes) AS total_sun_minutes
             ,mode() WITHIN GROUP (ORDER BY date_month) AS month
             ,mode() WITHIN GROUP (ORDER BY month_name) AS month_name
             ,mode() WITHIN GROUP (ORDER BY season) AS season

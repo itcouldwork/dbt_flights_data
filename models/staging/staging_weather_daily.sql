@@ -18,7 +18,7 @@ daily_data AS (
             (json_data->>'wspd')::FLOAT AS avg_wind_speed_kmh,
             (json_data->>'wpgt')::FLOAT AS wind_peakgust_kmh,
             (json_data->>'pres')::FLOAT AS avg_pressure_hpa,
-            (json_data->>'tsun')::INTEGER AS sunshine_min
+            (json_data->>'tsun')::INTEGER AS sun_minutes
     FROM daily_raw
 )
 SELECT * 

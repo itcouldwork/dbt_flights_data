@@ -19,7 +19,7 @@ hourly_data AS (
             ,(json_data->>'wspd')::FLOAT AS wind_speed_kmh
             ,(json_data->>'wpgt')::FLOAT AS wind_peakgust_kmh
             ,(json_data->>'pres')::FLOAT AS pressure_hpa 
-            ,(json_data->>'tsun')::INTEGER AS sunshine_min
+            ,(json_data->>'tsun')::INTEGER AS sun_minutes
             ,(json_data->>'coco')::INTEGER AS condition_code
     FROM hourly_raw
 )
