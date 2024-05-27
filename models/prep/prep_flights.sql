@@ -1,7 +1,7 @@
 WITH flights_raw AS (
     SELECT * 
     FROM {{source("staging_flights", "flights")}}
-)
+),
 flights_cleaned AS(
     SELECT flight_date::DATE
             ,TO_CHAR(dep_time, 'fm0000')::TIME AS dep_time
