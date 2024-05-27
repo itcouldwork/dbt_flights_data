@@ -18,6 +18,6 @@ weekly_aggregation AS (
             ,mode() WITHIN GROUP (ORDER BY month_name) AS month_name
             ,mode() WITHIN GROUP (ORDER BY season) AS season
         FROM daily_data
-        GROUP BY airport_code, station_id, date_year, cw;
+        GROUP BY airport_code, station_id, date_year, cw
 )
 SELECT * FROM groupby_aggregate
