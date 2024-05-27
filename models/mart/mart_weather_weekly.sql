@@ -20,4 +20,4 @@ weekly_aggregation AS (
         FROM daily_data
         GROUP BY airport_code, station_id, date_year, cw
 )
-SELECT * FROM groupby_aggregate
+SELECT * FROM weekly_aggregation
