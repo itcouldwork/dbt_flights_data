@@ -1,6 +1,6 @@
 WITH hourly_data AS (
     SELECT * 
-    FROM {{ref('staging_forecast_hour')}}
+    FROM {{ref('staging_hourly')}}
 ),
 add_features AS (
     SELECT *
