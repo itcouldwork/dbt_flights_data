@@ -1,4 +1,4 @@
-WITH airports_regions_join AS (
+WITH flights_airports_unique AS (
     SELECT * 
     FROM {{source("staging_flights", "airports")}}
     LEFT JOIN {{source("staging_flights", "regions")}}
