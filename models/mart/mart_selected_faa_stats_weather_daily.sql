@@ -9,7 +9,7 @@ WITH departures AS (
 --			,COUNT(DISTINCT tail_number) AS dep_nunique_tails -- BONUS TASK
 --			,COUNT(DISTINCT airline) AS dep_nunique_airlines -- BONUS TASK
 	FROM {{ref('prep_flights')}}
-	WHERE origin IN (SELECT DISTINCT airport_code FROM prep_weather_daily)
+	WHERE origin IN (SELECT DISTINCT airport_code FROM {{ref('prep_weather_daily')}})
 	GROUP BY origin, flight_date 
 	ORDER BY origin, flight_date
 ),
@@ -24,7 +24,7 @@ arrivals AS (
 --			,COUNT(DISTINCT tail_number) AS arr_nunique_tails -- BONUS TASK
 --			,COUNT(DISTINCT airline) AS arr_nunique_airlines -- BONUS TASK
 	FROM {{ref('prep_flights')}}
-	WHERE dest IN (SELECT DISTINCT airport_code FROM prep_weather_daily)
+	WHERE dest IN (SELECT DISTINCT airport_code FROM {{ref('prep_weather_daily')}})
 	GROUP BY dest, flight_date
 	ORDER BY dest, flight_date
 ),
