@@ -1,3 +1,5 @@
+{{ config(materialized='view') }}
+
 WITH flights_one_month AS (
     SELECT * 
     FROM {{source('staging_flights', 'flights')}}
