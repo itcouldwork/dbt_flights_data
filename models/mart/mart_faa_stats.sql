@@ -5,8 +5,8 @@ WITH departures AS (
 			,SUM(cancelled) AS dep_cancelled
 			,SUM(diverted) AS dep_diverted
 			,COUNT(flight_number) AS dep_n_flights
-			,COUNT(DISTINCT tail_number) AS dep_nunique_tails -- BONUS TASK
-			,COUNT(DISTINCT airline) AS dep_nunique_airlines -- BONUS TASK
+			-- ,COUNT(DISTINCT tail_number) AS dep_nunique_tails -- BONUS TASK
+			-- ,COUNT(DISTINCT airline) AS dep_nunique_airlines -- BONUS TASK
 	FROM {{ref('prep_flights')}} 
 	GROUP BY origin
 	ORDER BY origin
@@ -18,8 +18,8 @@ arrivals AS (
 			,SUM(cancelled) AS arr_cancelled
 			,SUM(diverted) AS arr_diverted
 			,COUNT(flight_number) AS arr_n_flights
-			,COUNT(DISTINCT tail_number) AS arr_nunique_tails -- BONUS TASK
-			,COUNT(DISTINCT airline) AS arr_nunique_airlines -- BONUS TASK
+			-- ,COUNT(DISTINCT tail_number) AS arr_nunique_tails -- BONUS TASK
+			-- ,COUNT(DISTINCT airline) AS arr_nunique_airlines -- BONUS TASK
 	FROM {{ref('prep_flights')}} 
 	GROUP BY dest
 	ORDER BY dest
