@@ -29,4 +29,4 @@ add_names AS (
 )
 SELECT *
 FROM add_names
-ORDER BY (origin, dest) DESC;
+ORDER BY (origin, dest) DESC

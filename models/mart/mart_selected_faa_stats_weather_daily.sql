@@ -56,4 +56,4 @@ SELECT t.*
 FROM total_stats t
 LEFT JOIN {{ref('prep_weather_daily')}} w
 ON faa = airport_code AND flight_date = date
-ORDER BY total_diverted DESC;
+ORDER BY total_diverted DESC
